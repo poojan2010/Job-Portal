@@ -15,10 +15,11 @@ class CreateApplyjobsTable extends Migration
     {
         Schema::create('applyjobs', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
+            $table->string('cv');
             $table->foreignId('job_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
+
         });
     }
 

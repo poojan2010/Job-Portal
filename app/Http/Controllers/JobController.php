@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 
+use App\Models\ApplyJob;
 use App\Models\City;
 use App\Models\Job;
 use Illuminate\Http\Request;
@@ -104,7 +105,7 @@ class JobController extends Controller
         ]);
 
         $request->file('cv')->move('Uploads',$request->file('cv')->getClientOriginalName());
-        $job = Job::create([
+        $job = ApplyJob::create([
 
             'cv' => $request->file('cv')->getClientOriginalName(),
 
