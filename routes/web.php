@@ -56,5 +56,7 @@ Route::get('/userhome',[JobController::class,'userjobshow']);
 
 Route::get('/jobdetails/{id}',[JobController::class,'jobdetails']);
 
+Route::post('/addcv',[JobController::class,'addcv']);
+
 
 

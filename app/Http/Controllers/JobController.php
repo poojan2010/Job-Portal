@@ -96,4 +96,19 @@ class JobController extends Controller
         return view('userhome', compact('joblist'));
     }
 
+    public function addcv(Request $request)
+    {
+        $job = $request->input();
+        $request->validate([
+            'cv' => 'required',
+        ]);
+
+        $request->file('cv')->move('Uploads',$request->file('cv')->getClientOriginalName());
+        $job = Job::create([
+
+            'cv' => $request->file('cv')->getClientOriginalName(),
+
+        ]);
+        return redirect('userhome');
+    }
 }
