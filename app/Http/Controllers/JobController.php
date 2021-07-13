@@ -106,9 +106,7 @@ class JobController extends Controller
 
         $request->file('cv')->move('Uploads',$request->file('cv')->getClientOriginalName());
         $job = ApplyJob::create([
-
             'cv' => $request->file('cv')->getClientOriginalName(),
-
         ]);
         return redirect('userhome');
     }
