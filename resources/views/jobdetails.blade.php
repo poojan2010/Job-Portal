@@ -16,7 +16,7 @@
         <i>{{ $joblist->salary }}</i>
         <br><br>
 
-        <a href="/applynow"><button class="btn btn-dark">Apply Now</button></a>
+        <a href="/applynow/{{ $joblist->id }}"><button class="btn btn-dark">Apply Now</button></a>
     </div>
 
 </div>

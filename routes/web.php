@@ -58,5 +58,8 @@ Route::get('/jobdetails/{id}',[JobController::class,'jobdetails']);
 
 Route::post('/addcv',[JobController::class,'addcv']);
 
+Route::get('/applynow/{id}',[JobController::class,'applynow']);
+
+
 
 

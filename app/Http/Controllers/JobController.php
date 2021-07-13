@@ -105,9 +105,19 @@ class JobController extends Controller
         ]);
 
         $request->file('cv')->move('Uploads',$request->file('cv')->getClientOriginalName());
+        //dd($request->file('cv')->getClientOriginalName());
         $job = ApplyJob::create([
             'cv' => $request->file('cv')->getClientOriginalName(),
+            'job_id' => $request->job_id,
+            'user_id' => $request->user_id,
         ]);
         return redirect('userhome');
     }
+
+    public function applynow(Request $request,$id)
+    {
+       // dd($id);
+        return view('applynow',['id'=>$id]);
+    }
+
 }

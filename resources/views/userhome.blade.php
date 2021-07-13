@@ -8,16 +8,20 @@
 <div>
 
         @foreach($joblist as $job)
-            <a href="/jobdetails/{{ $job->id }}">
+{{--            <a href="/jobdetails/{{ $job->id }}">--}}
+
             <div class="card mt-3" style="width:500px; margin-left: 30px;">
-                <div class="card-body" >
+                <button type="button" onclick="window.location='{{ url('/jobdetails',$job->id) }}'" class="btn btn-outline">
+                <div class="card-body" style="text-align: left">
                         <div>
                             <h4 class="card-title">{{$job->title}}</h4>
-                            <i>{{$job->company_name}} </i>
+                            <i>{{$job->company_name}}</i>
                         </div>
                 </div>
+                </button>
             </div>
-            </a>
+
+          {{--  </a>--}}
         @endforeach
 
 </div>
